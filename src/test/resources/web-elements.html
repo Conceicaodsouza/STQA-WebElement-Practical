@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web Element Interaction Practical</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        .section {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 8px 0;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin-top: 10px;
+        }
+
+        #dynamicMessage {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        iframe {
+            width: 100%;
+            height: 150px;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Web Element Interaction and Synchronization Handling</h1>
+
+    <!-- Textbox -->
+    <div class="section">
+        <h2>1. Textbox</h2>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+    </div>
+
+    <!-- Radio Buttons -->
+    <div class="section">
+        <h2>2. Radio Button</h2>
+
+        <label>
+            <input type="radio" name="gender" value="male">
+            Male
+        </label>
+
+        <label>
+            <input type="radio" name="gender" value="female">
+            Female
+        </label>
+    </div>
+
+    <!-- Checkbox -->
+    <div class="section">
+        <h2>3. Checkbox</h2>
+
+        <label>
+            <input type="checkbox" id="terms">
+            I agree to the terms and conditions
+        </label>
+    </div>
+
+    <!-- Dropdown -->
+    <div class="section">
+        <h2>4. Dropdown</h2>
+
+        <label for="country">Select Country:</label>
+
+        <select id="country">
+            <option value="">-- Select --</option>
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="uk">United Kingdom</option>
+        </select>
+    </div>
+
+    <!-- Alert -->
+    <div class="section">
+        <h2>5. Alert</h2>
+
+        <button id="alertButton" onclick="showAlert()">
+            Show Alert
+        </button>
+    </div>
+
+    <!-- Dynamic Element for Explicit Wait -->
+    <div class="section">
+        <h2>6. Explicit Wait</h2>
+
+        <button id="loadButton" onclick="showMessage()">
+            Load Message
+        </button>
+
+        <p id="dynamicMessage"></p>
+    </div>
+
+    <!-- Frame -->
+    <div class="section">
+        <h2>7. Frame</h2>
+
+        <iframe
+            id="testFrame"
+            srcdoc="
+                <!DOCTYPE html>
+                <html>
+                <body>
+                    <h3 id='frameHeading'>Content Inside Frame</h3>
+                    <input type='text' id='frameInput'>
+                </body>
+                </html>
+            ">
+        </iframe>
+    </div>
+
+    <script>
+
+        function showAlert() {
+            alert("This is a test alert.");
+        }
+
+        function showMessage() {
+
+            setTimeout(function () {
+
+                document.getElementById("dynamicMessage").innerText =
+                    "Message loaded successfully.";
+
+            }, 3000);
+        }
+
+    </script>
+
+</body>
+
+</html>
