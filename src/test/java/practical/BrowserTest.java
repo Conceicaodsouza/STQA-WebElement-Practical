@@ -44,11 +44,7 @@ public class BrowserTest {
                     driver.getTitle()
             );
 
-            // Locate the text box
-            WebElement nameInput = driver.findElement(By.id("name"));
-
-            // Enter text into the text box
-            nameInput.sendKeys("Conceicao");
+            // TASK 1
 
             // Verify the entered text
             assertEquals(
@@ -56,15 +52,7 @@ public class BrowserTest {
                     nameInput.getAttribute("value")
             );
 
-            // Locate the country dropdown
-            WebElement countryDropdown =
-                    driver.findElement(By.id("country"));
-
-            Select countrySelect =
-                    new Select(countryDropdown);
-
-            // Select India from the dropdown
-            countrySelect.selectByVisibleText("India");
+            //  TASK 2
 
             // Verify the selected option
             assertEquals(
